@@ -10,4 +10,4 @@ Original file is located at
 import streamlit as st
 st.title("Hello, Sujitha!")
 st.subheader("This is my first Streamlit app")
-st.write("streamlit makes it easy to build web appsimport streamlit")
+st.write("streamlit makes it easy to build web apps")
