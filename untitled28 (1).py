@@ -7,8 +7,6 @@ Original file is located at
     https://colab.research.google.com/drive/1OGwtrm2gSaT6A9UJ_mcmcdSNDUG0aeZ_
 """
 
-pip install streamlit
-
 import streamlit as st
 st.title("Hello, Sujitha!")
 st.subheader("This is my first Streamlit app")
