@@ -57,14 +57,14 @@ def login_page():
             st.session_state.logged_in = True
             st.session_state.username = username
             st.success(f"Welcome, {username}! ✅")
-            st.experimental_rerun()
+            st.rerun()
         else:
             st.error("Invalid username or password ❌")
 
     st.info("Don't have an account?")
     if st.button("Sign Up"):
         st.session_state.page = "signup"
-        st.experimental_rerun()
+        st.rerun()
 
 # -----------------------------
 # SIGN UP PAGE
@@ -88,11 +88,11 @@ def signup_page():
             save_users()
             st.success("Account created successfully! 🎉 You can now log in.")
             st.session_state.page = "login"
-            st.experimental_rerun()
+            st.rerun()
 
     if st.button("Back to Login"):
         st.session_state.page = "login"
-        st.experimental_rerun()
+        st.rerun()
 
 # -----------------------------
 # MAIN PREDICTION PAGE
@@ -129,7 +129,7 @@ def prediction_page():
         st.session_state.logged_in = False
         st.session_state.username = ""
         st.success("You have been logged out.")
-        st.experimental_rerun()
+        st.rerun()
 
 # -----------------------------
 # PAGE NAVIGATION
