@@ -4,10 +4,10 @@ import numpy as np
 
 # Load the saved model and scaler
 scaler = pickle.load(open('scaler.pkl', 'rb'))
-
+model = pickle.load(open('logistic_model.pkl', 'rb'))
 
 # Streamlit UI
-st.title("🩺 Diabetes Prediction using Logistic Regression")
+st.title("🩺 Diabetes Detection app")
 
 st.write("Enter the following details to predict diabetes status:")
 
