@@ -12,8 +12,8 @@ import numpy as np
 import pickle
 
 # Load model and scaler
-model = pickle.load(open('knn_model.sav', 'rb'))
-scaler = pickle.load(open('scaler.sav', 'rb'))
+#load the saved model
+loaded_model = pickle.load(open('D:/Diabetes Detection/content/ trained_model.sav', 'rb'))
 
 # App title
 st.title("🩺 Diabetes Prediction using KNN")
