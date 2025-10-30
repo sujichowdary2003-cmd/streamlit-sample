@@ -29,7 +29,7 @@ if st.button("Predict"):
 
         # Scale and predict
         temp_sc = scaler.transform(data)
-        pred = int(lr.predict(temp_sc)[0])
+        pred = int(model.predict(temp_sc)[0])
 
         # Display result
         if pred == 0:
