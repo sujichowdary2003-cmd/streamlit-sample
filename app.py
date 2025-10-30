@@ -4,7 +4,7 @@ import numpy as np
 
 # Load the saved model and scaler
 scaler = pickle.load(open('scaler.pkl', 'rb'))
-lr = pickle.load(open('lr.pkl', 'rb'))
+
 
 # Streamlit UI
 st.title("🩺 Diabetes Prediction using Logistic Regression")
