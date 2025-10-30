@@ -8,6 +8,37 @@ Original file is located at
 """
 
 import streamlit as st
-st.title("Hello, Sujitha!")
-st.subheader("This is my first Streamlit app")
-st.write("streamlit makes it easy to build web apps")
+import numpy as np
+import pickle
+
+# Load model and scaler
+model = pickle.load(open('knn_model.sav', 'rb'))
+scaler = pickle.load(open('scaler.sav', 'rb'))
+
+# App title
+st.title("🩺 Diabetes Prediction using KNN")
+
+# Input fields
+Pregnancies = st.number_input("Number of Pregnancies", 0, 20, 0)
+Glucose = st.number_input("Glucose Level", 0, 200, 120)
+BloodPressure = st.number_input("Blood Pressure value", 0, 150, 70)
+SkinThickness = st.number_input("Skin Thickness value", 0, 100, 20)
+Insulin = st.number_input("Insulin Level", 0, 900, 79)
+BMI = st.number_input("BMI value", 0.0, 70.0, 25.0)
+DiabetesPedigreeFunction = st.number_input("Diabetes Pedigree Function value", 0.0, 2.5, 0.5)
+Age = st.number_input("Age", 1, 120, 33)
+
+# Prediction button
+if st.button("Predict"):
+    # Prepare input
+    input_data = np.array([[Pregnancies, Glucose, BloodPressure, SkinThickness, Insulin,
+                            BMI, DiabetesPedigreeFunction, Age]])
+
+    std_data = scaler.transform(input_data)
+    prediction = model.predict(std_data)
+
+    if prediction[0] == 0:
+        st.success("✅ The person is **not diabetic**")
+    else:
+        st.error("⚠️ The person **is diabetic**")
+
