@@ -19,7 +19,6 @@ loaded_model = pickle.load(open('D:\Diabetes Detection\content\ trained_model.sa
 st.title("🩺 Diabetes Prediction using KNN")
 
 # Input fields
-Pregnancies = st.number_input("Number of Pregnancies", 0, 20, 0)
 Glucose = st.number_input("Glucose Level", 0, 200, 120)
 BloodPressure = st.number_input("Blood Pressure value", 0, 150, 70)
 SkinThickness = st.number_input("Skin Thickness value", 0, 100, 20)
@@ -31,7 +30,7 @@ Age = st.number_input("Age", 1, 120, 33)
 # Prediction button
 if st.button("Predict"):
     # Prepare input
-    input_data = np.array([[Pregnancies, Glucose, BloodPressure, SkinThickness, Insulin,
+    input_data = np.array([[ Glucose, BloodPressure, SkinThickness, Insulin,
                             BMI, DiabetesPedigreeFunction, Age]])
 
     std_data = scaler.transform(input_data)
